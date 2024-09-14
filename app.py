@@ -10,11 +10,11 @@ def enviar_email():
     email_password = password
 
     for i in range(15):
-        #Criar email para a conta padrão do TCK
+        #Envia 15 emails para a conta abaixo
         email = EmailMessage()
-        email['Subject'] = f'Teste de e-mail conta padrão {i}'
+        email['Subject'] = f'Teste de e-mail {i}'
         email['From'] = email_address
-        email['To'] = 'hinboxteste@gmail.com'
+        email['To'] = 'conta@destino.com'
         email.set_content('Corpo do email - teste de conta padrão')
 
         #Enviar do e-mail
@@ -23,20 +23,5 @@ def enviar_email():
             smtp.send_message(email)
 
             print('Email conta padrão enviado')
-
-    for i in range(15):
-        #Criar email para a conta de um grupo do TCK
-        email = EmailMessage()
-        email['Subject'] = f'Teste de e-mail conta grupo {i}'
-        email['From'] = email_address
-        email['To'] = 'diclodsonfenato@gmail.com'
-        email.set_content('Corpo do email - teste de conta grupo')
-
-        #Enviar do e-mail
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-            smtp.login(email_address, email_password)
-            smtp.send_message(email)
-
-            print('Email conta grupo enviado')
         
 enviar_email()
