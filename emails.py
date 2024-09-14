@@ -1,2 +1,2 @@
-address = 'automacaopython020@gmail.com'
-password = 'zoqg yfdg jveu jmdp'
+address = 'seu@email.com'
+password = 'sua senha de app de emails'
